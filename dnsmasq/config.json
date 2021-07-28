@@ -1,10 +1,10 @@
 {
-  "name": "Dnsmasq",
+  "name": "Custom Dnsmasq",
   "version": "1.4.4",
-  "slug": "dnsmasq",
-  "description": "A simple DNS server",
-  "url": "https://github.com/home-assistant/hassio-addons/tree/master/dnsmasq",
-  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "slug": "custom-dnsmasq",
+  "description": "A simple custom DNS server",
+  "url": "https://github.com/rbo/home-assistant-addons/tree/main/dnsmasq",
+  "arch": ["aarch64"],
   "advanced": true,
   "startup": "system",
   "init": false,
@@ -17,6 +17,7 @@
     "forwards": [],
     "hosts": [],
     "services": []
+    "wildcards": []
   },
   "schema": {
     "defaults": ["str"],
@@ -32,6 +33,12 @@
         "ip": "str"
       }
     ],
+    "wildcards": [
+      {
+        "host": "str",
+        "ip": "str"
+      }
+    ],
     "services": [
       {
         "srv": "str",
@@ -42,5 +49,5 @@
       }
     ]
   },
-  "image": "homeassistant/{arch}-addon-dnsmasq"
+  "image": "quay.io/rbo/home-assistant-addon-dnsmasq"
 }
